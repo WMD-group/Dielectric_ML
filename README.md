@@ -7,28 +7,30 @@ This work is mainly composed of two parts: machine learning and SHAP analysis.
 Overall aim is to extract physically and chemically meaningful trends from trained machine learning model (in our case support vector regression).
 
 ## Contents
+![Interactive plot](figures/interactive.png)
+![Force plot](figures/force_plot.png)
 
-#### Setting up Docker environment
+### Setting up Docker environment
 
-docker build --rm -t mlshap .
-docker run -it -p 8080:8080 --name testmlsvr --mount type=bind,source=$(pwd),target=/home/anaconda/mount testmlsvr
+- build docker image
+`docker build --rm -t mlshap .`
+- run container
+`docker run -it -p 8080:8080 --name mlshap mlshap`
+- port 8080 is used by default
 
-#### Notebooks
+### Notebooks
 
 **[Steps 1: Machine learning](https://github.com/WMD-group/Dielectric_ML/blob/master/step1_ml_training.ipynb)**
 
 - Train a support vector regression (SVR) model
-- Check the performance as done in the main paper
+- Check the performance as done in the paper
 
-**[Step 2: Shapley additive explanation analysis](https://github.com/WMD-group/Dielectric_ML/blob/master/step2_shap_analyses.ipynb)
+**[Step 2: Shapley additive explanation analysis](https://github.com/WMD-group/Dielectric_ML/blob/master/step2_shap_analyses.ipynb)**
 
 - analyse the whole database
 - analyse individual data
 
-![Interactive plot](figures/interactive.png)
-![Force plot](figures/force_plot.png)
-
-#### Data
+### Data
 [![DOI](https://zenodo.org/badge/XXX.svg)](https://zenodo.org/badge/latestdoi/XXX)
 The required data can be downloaded separately from the above Zenodo DOI link and should be untarred directly into this directory, creating a sub-directory named `data`.
 
@@ -42,10 +44,10 @@ The notebooks and the dataset make use of many Python packages:
 - [pymatgen](http://pymatgen.org)
 - [scikit-learn](https://scikit-learn.org/stable/)
 - [SHAP](https://github.com/slundberg/shap)
-- [smact](https://github.com/WMD-group/smact)
+- [SMACT](https://github.com/WMD-group/smact)
 
 The jupyter notebooks and the datasets follow the copyrights of above packages.
-Package versions specified in the Docker file.
+For specific package versions see the `Dockerfile`.
 
 ### Caveats
 
