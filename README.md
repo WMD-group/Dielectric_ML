@@ -1,20 +1,19 @@
-[![DOI](https://zenodo.org/badge/XXX.svg)](https://zenodo.org/badge/latestdoi/XXX)
-
 Data repository for the publication: ***Modelling the dielectric constants of crystals using machine learning***
+
+![Interactive plot](figures/interactive.png)
+![Force plot](figures/force_plot.png)
 
 ## Background
 This work is mainly composed of two parts: machine learning and SHAP analysis.
-Overall aim is to extract physically and chemically meaningful trends from trained machine learning model (in our case support vector regression).
+Overall aim is to extract physically and chemically meaningful trends from trained machine learning model.
 
 ## Contents
-![Interactive plot](figures/interactive.png)
-![Force plot](figures/force_plot.png)
 
 ### Setting up Docker environment
 
 - build docker image
 `docker build --rm -t mlshap .`
-- run container
+- run container (this will run jupyter lab directly)
 `docker run -it -p 8080:8080 --name mlshap mlshap`
 - port 8080 is used by default
 
@@ -27,11 +26,9 @@ Overall aim is to extract physically and chemically meaningful trends from train
 
 **[Step 2: Shapley additive explanation analysis](https://github.com/WMD-group/Dielectric_ML/blob/master/step2_shap_analyses.ipynb)**
 
-- analyse the whole database
-- analyse individual data
+- analyse the model and its prediction using shapley additive explanations(SHAP)
 
 ### Data
-[![DOI](https://zenodo.org/badge/XXX.svg)](https://zenodo.org/badge/latestdoi/XXX)
 The required data can be downloaded separately from the above Zenodo DOI link and should be untarred directly into this directory, creating a sub-directory named `data`.
 
 ### Dependencies
@@ -51,7 +48,7 @@ For specific package versions see the `Dockerfile`.
 
 ### Caveats
 
-- The dataset was downloaded from `Materials Project` in March 2020. Therefore it may differ from the current database.
-- Although using Docker should reproduce the result to a high degree, due to strong environmental dependence, the result may differ from the main paper.
+- The dataset was downloaded from `Materials Project` on March 2020 and it may differ from the current version of the database.
+- Docker should reproduce the result to a high degree, but the result may slightly differ from the main paper.
 - Many different libraries are used and I am not an expert in all of them: some of the code is probably far from elegant!
 
