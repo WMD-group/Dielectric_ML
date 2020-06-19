@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/265285458.svg)](https://zenodo.org/badge/latestdoi/265285458)
+
 Data repository for the publication:
 Kazuki Morita, Daniel W. Davies, Keith T. Butler, and Aron Walsh ***[Modelling the dielectric constants of crystals using machine learning](https://arxiv.org/abs/2005.05831)***
 
@@ -30,7 +32,7 @@ Overall aim is to extract physically and chemically meaningful trends from train
 - analyse the model and its prediction using shapley additive explanations(SHAP)
 
 ### Data
-The required data can be downloaded separately from the above Zenodo DOI link and should be untarred directly into this directory, creating a sub-directory named `data`.
+All the required dataset is in the `dataset` directory.
 
 ### Dependencies
 
