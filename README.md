@@ -1,4 +1,5 @@
-Data repository for the publication: ***Modelling the dielectric constants of crystals using machine learning***
+Data repository for the publication:
+Kazuki Morita, Daniel W. Davies, Keith T. Butler, and Aron Walsh ***[Modelling the dielectric constants of crystals using machine learning](https://arxiv.org/abs/2005.05831)***
 
 ![Interactive plot](figures/interactive.png)
 ![Force plot](figures/force_plot.png)
