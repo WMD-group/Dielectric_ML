@@ -11,10 +11,10 @@ ENV CONDA_MD5 87e77f097f6ebb5127c77662dfc3165e
 # Create non-root user, install dependencies, install Conda
 RUN useradd -d /home/anaconda -m -u 10151 anaconda \
     # for debug
-    && wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-    && printf "${CONDA_MD5}  Miniconda3-latest-Linux-x86_64.sh\n" > miniconda.md5 \
+    && wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.2-Linux-x86_64.sh \
+    && printf "${CONDA_MD5}  Miniconda3-py37_4.8.2-Linux-x86_64.sh\n" > miniconda.md5 \
     && if [ $(md5sum -c miniconda.md5 | awk '{print $2}') != 'OK' ] ; then exit 1; fi \
-    && mv Miniconda3-latest-Linux-x86_64.sh miniconda.sh \
+    && mv Miniconda3-py37_4.8.2-Linux-x86_64.sh miniconda.sh \
     && mkdir -p /opt \
     && bash ./miniconda.sh -b -p /opt/conda \
     && rm miniconda.sh miniconda.md5 \
